@@ -1,14 +1,18 @@
 function getComputerChoice() {
-    let CompChoice = Math.floor(Math.random() * 3) + 1;
+    let compSelection;
+    let compChoice = Math.floor(Math.random() * 3) + 1;
 
-    if (CompChoice === 1) {
-        return "Rock"
+    if (compChoice === 1) {
+        compSelection = "Rock"
+        return compSelection
     }
-    else if (CompChoice === 2) {
-        return "Paper"
+    else if (compChoice === 2) {
+        compSelection = "Paper"
+        return compSelection
     }
     else {
-        return "Scissors"
+        compSelection = "Scissors"
+        return compSelection
     }
 }
 
