@@ -3,45 +3,43 @@ function getComputerChoice() {
     let compChoice = Math.floor(Math.random() * 3) + 1;
 
     if (compChoice === 1) {
-        compSelection = "Rock"
+        compSelection = "rock"
         return compSelection
     }
     else if (compChoice === 2) {
-        compSelection = "Paper"
+        compSelection = "paper"
         return compSelection
     }
     else {
-        compSelection = "Scissors"
+        compSelection = "scissors"
         return compSelection
     }
 }
 
-console.log(getComputerChoice())
-
 function playRound(playerSelection, computerSelection) {
     let message;
 
-    if (playerSelection === "Rock" && computerSelection === "Paper") {
+    if (playerSelection === "rock" && computerSelection === "paper") {
         message = "You lose! Paper beats rock!"
         return message
     }
-    else if (playerSelection === "rock" && computerSelection === "Scissors") {
+    else if (playerSelection === "rock" && computerSelection === "scissors") {
         message = "You won! Rock beats scissors!"
         return message
     }
-    else if (playerSelection === "Paper" && computerSelection === "Scissors") {
+    else if (playerSelection === "paper" && computerSelection === "scissors") {
         message = "You lose! Scissors beat paper!"
         return message
     }
-    else if (playerSelection === "Paper" && computerSelection === "Rock") {
+    else if (playerSelection === "paper" && computerSelection === "rock") {
         message = "You won! Paper beats rock!"
         return message
     }
-    else if (playerSelection === "Scissors" && computerSelection === "Rock") {
+    else if (playerSelection === "scissors" && computerSelection === "rock") {
         message = "You lose! Rock beats scissors!"
         return message
     }
-    else if (playerSelection === "Scissors" && computerSelection === "Paper") {
+    else if (playerSelection === "scissors" && computerSelection === "paper") {
         message = "You won! Scissors beats paper!"
         return message
     }
@@ -51,6 +49,12 @@ function playRound(playerSelection, computerSelection) {
     }
 } 
 
-const playerSelection = "Paper";
-const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection))
+function game() {
+    for (let i = 1; i <= 5; i++) {
+        const playerSelection = prompt("Rock Paper Scissor Shoot!").toLowerCase();
+        const computerSelection = getComputerChoice();
+        console.log(playRound(playerSelection, computerSelection))
+    }
+}
+
+game()
