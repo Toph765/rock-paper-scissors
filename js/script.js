@@ -43,6 +43,10 @@ function playRound(playerSelection, computerSelection) {
         message = "You won! Scissors beats paper!"
         return message
     }
+    else if (playerSelection != "rock" && playerSelection != "paper" && playerSelection != "scissors") {
+        message = "Please write rock, paper or scissors!"
+        return message
+    }
     else {
         message = "It's a tie!"
         return message
