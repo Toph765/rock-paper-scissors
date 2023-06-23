@@ -1,4 +1,6 @@
-const choices = ["rock", "paper", "scissors"]
+const choices = ["rock", "paper", "scissors"];
+const buttons = document.querySelectorAll('button');
+const result = document.querySelector('.result');
 
 function getComputerChoice() {
     return choices[Math.floor(Math.random() * 3)];
@@ -21,12 +23,8 @@ function playRound(playerSelection, computerSelection) {
     }
 } 
 
-const buttons = document.querySelectorAll('button');
-
-console.log(buttons[0].textContent);
-
 buttons.forEach(button => button.addEventListener('click', () => {
     const playerSelection = button.textContent.toLowerCase();
     const computerSelection = getComputerChoice();
-    console.log(playRound(playerSelection, computerSelection));
+    result.textContent = playRound(playerSelection, computerSelection);
 }))
