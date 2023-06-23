@@ -19,38 +19,26 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {
     let message;
 
-    if (playerSelection === "rock" && computerSelection === "paper") {
-        message = "You lose! Paper beats rock!"
-        return message
-    }
-    else if (playerSelection === "rock" && computerSelection === "scissors") {
-        message = "You won! Rock beats scissors!"
-        return message
-    }
-    else if (playerSelection === "paper" && computerSelection === "scissors") {
-        message = "You lose! Scissors beat paper!"
-        return message
-    }
-    else if (playerSelection === "paper" && computerSelection === "rock") {
-        message = "You won! Paper beats rock!"
-        return message
-    }
-    else if (playerSelection === "scissors" && computerSelection === "rock") {
-        message = "You lose! Rock beats scissors!"
-        return message
-    }
-    else if (playerSelection === "scissors" && computerSelection === "paper") {
-        message = "You won! Scissors beats paper!"
-        return message
-    }
-    else if (playerSelection != "rock" && playerSelection != "paper" && playerSelection != "scissors") {
-        message = "Please write rock, paper or scissors!"
-        return message
-    }
-    else {
-        message = "It's a tie!"
-        return message
+    if (playerSelection === computerSelection) {
+            message = "Its a tie!";
+            return message;
+    } else if (playerSelection === "rock" && computerSelection === "scissors" ||
+               playerSelection === "paper" && computerSelection === "rock" ||
+               playerSelection === "scissors" && computerSelection === "paper") {
+        message = `You won! ${playerSelection} beats ${computerSelection}!`;
+        return message;
+    } else {
+        message = `You lost! ${computerSelection} beats ${playerSelection}!`;
+        return message;
     }
 } 
 
-game()
+const buttons = document.querySelectorAll('button');
+
+console.log(buttons[0].textContent);
+
+buttons.forEach(button => button.addEventListener('click', () => {
+    const playerSelection = button.textContent.toLowerCase();
+    const computerSelection = getComputerChoice();
+    console.log(playRound(playerSelection, computerSelection));
+}))
