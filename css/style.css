@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    padding-top: 50px;
+    text-align: center;
+}
+
+.buttons {
+    padding-top: 100px;
+}
+
+.button {
+    width: 150px;
+    height: 150px;
+    font-size: 80px;
+}
+
+.result {
+    padding-top: 80px;
+}
+
+.score {
+    padding-top: 40px;
+}
