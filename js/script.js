@@ -31,7 +31,7 @@ function playRound(playerSelection, computerSelection) {
 } 
 
 buttons.forEach(button => button.addEventListener('click', () => {
-    const playerSelection = button.textContent.toLowerCase();
+    const playerSelection = button.getAttribute('value');
     const computerSelection = getComputerChoice();
     result.textContent = playRound(playerSelection, computerSelection);
     score.textContent = `Player: ${playerScore} | Computer: ${computerScore}`;
